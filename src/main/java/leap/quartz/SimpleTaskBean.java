@@ -114,8 +114,7 @@ public class SimpleTaskBean implements TaskBean, PostCreateBean {
 
 		JobDataMap jobDataMap = new JobDataMap();
 		jobDataMap.put("targetObject", this.targetObject);
-		jobDataMap.put("targetMethod", this.targetMethod);
-		
+		jobDataMap.put("targetMethod", this.targetMethod);		
 		
 		this.jobDetail = JobBuilder.newJob(MethodInvokeJobBean.class).withIdentity(this.name, this.group).setJobData(jobDataMap).build();
 

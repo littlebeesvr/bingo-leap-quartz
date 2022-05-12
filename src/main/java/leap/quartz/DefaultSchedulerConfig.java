@@ -13,7 +13,7 @@ public class DefaultSchedulerConfig implements SchedulerConfig, SchedulerConfigu
 	protected boolean enabled = false;
 	protected String schedulerInstanceName = "DefaultQuartzScheduler";
 	protected String threadPoolClass = "org.quartz.simpl.SimpleThreadPool";
-	protected int threadPoolThreadCount = 10;
+	protected int threadPoolThreadCount = 20;
 	protected int threadPoolThreadPriority = Thread.NORM_PRIORITY;
 	protected String jobStoreClass = "org.quartz.simpl.RAMJobStore";
 

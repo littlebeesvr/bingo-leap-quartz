@@ -32,10 +32,10 @@ public class SchedulerFactoryBean implements PostCreateBean {
 	@Override
 	public void postCreate(BeanFactory beanFactory) throws Throwable {
 		if (!config.isEnabled()) {
-			log.debug("---------- quartz scheduer状态禁用 ----------");
+			log.debug("quartz scheduer状态禁用");
 			return;
 		}
-		log.debug("---------- quartz scheduer 开始启用 ----------");
+		log.debug("quartz scheduer 开始启用");
 
 		if (tasks != null || tasks.size() > 0) {
 			SchedulerFactory schedulerFactory = new StdSchedulerFactory();
@@ -54,9 +54,9 @@ public class SchedulerFactoryBean implements PostCreateBean {
 				scheduler.scheduleJob(taskBean.getJobDetail(), taskBean.getTrigger());
 			}
 			scheduler.startDelayed(2);
-			log.info("---------- quartz scheduler 启动完成 ----------");
+			log.info("quartz scheduler 启动完成");
 		}else{
-			log.info("---------- quartz scheduler 未配置job，放弃启动 ----------");
+			log.info("quartz scheduler 未配置job，放弃启动");
 		}
 	}
 
